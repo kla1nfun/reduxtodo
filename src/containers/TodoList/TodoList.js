@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
 import App from '../../components/TodoComponents/App'
 
 export default class TodoList extends Component {
@@ -22,3 +19,4 @@ export default class TodoList extends Component {
             );
         }
 }
+

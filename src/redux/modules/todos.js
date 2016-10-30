@@ -6,6 +6,10 @@ const todo = (state, action) => {
         text: action.text,
         completed: false
       }
+    case 'ADD_AUTHOR':
+      return {
+        author: action.author
+      }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state
@@ -23,6 +27,11 @@ const todo = (state, action) => {
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
+      return [
+        ...state,
+        todo(undefined, action)
+      ]
+    case 'ADD_AUTHOR':
       return [
         ...state,
         todo(undefined, action)

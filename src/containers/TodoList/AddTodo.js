@@ -1,25 +1,23 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../../actions/index'
 
-let AddTodo = ({ dispatch }) => {
-  let input;
+let AddTodo = (AuthorFilter, GetList) => {
+  let input_text;
+  let input_author;
   const styles = require('./TodoList.scss');
   return (
     <div className={styles.header}>
-      <form onSubmit={e => {
-        e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        dispatch(addTodo(input.value))
-        input.value = ''
-      }}>
+      <form onSubmit = {() => AuthorFilter(input_author.value) && GetList(input_text.value)}>
         <input
           placeholder="Your todo"
           className={styles.newtodo} ref={node => {
-          input = node
+          input_text = node
         }} />
+        <input
+          placeholder="Your name"
+          className={styles.newtodo} ref={node => {
+          input_author = node
+        }} />
+
         <button className={styles.add_todo} type="submit">
           Add Todo
         </button>
@@ -27,6 +25,5 @@ let AddTodo = ({ dispatch }) => {
     </div>
   )
 }
-AddTodo = connect()(AddTodo)
 
 export default AddTodo
