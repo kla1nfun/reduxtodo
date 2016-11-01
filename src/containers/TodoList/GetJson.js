@@ -12,8 +12,7 @@ export default function loadJsonAction() {
         dispatch(addJsonAction(jsonResult));
       })
       .catch(function(err) {
-        sweetAlert("Oops... error");
+        alert("Oops... error");
       });
   }
-  console.log(jsonResult);
 }
