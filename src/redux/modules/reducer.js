@@ -10,10 +10,6 @@ import info from './info';
 import widgets from './widgets';
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
-<<<<<<< HEAD
-import jsontodos from './getlist'
-=======
->>>>>>> 863875877ede35dda3d02a7dff828ecf29ee32fe
 
 export default combineReducers({
   routing: routerReducer,
@@ -22,10 +18,6 @@ export default combineReducers({
   form,
   todos,
   visibilityFilter,
-<<<<<<< HEAD
-  jsontodos,
-=======
->>>>>>> 863875877ede35dda3d02a7dff828ecf29ee32fe
   multireducer: multireducer({
     counter1: counter,
     counter2: counter,

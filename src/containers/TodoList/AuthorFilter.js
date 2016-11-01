@@ -1,39 +1,39 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo, addAuthor, dataEntities } from '../../actions/index'
+import { addTodo, addAuthor, addJsonAction } from '../../actions/index'
 import AddTodo from './AddTodo'
-import {createEntityOperation} from 'redux-redents';
+import { loadJsonAction } from './GetJson'
 
-
-this.props.actions.entityOperation('jsontodos','index');
 
 const mapDispatchToPropsAuth = (dispatch) => {
+    const jsonarr = [{
+    "userId": 1,
+    "id": 20,
+    "title": "ullam nobis libero sapiente ad optio sint",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 21,
+    "title": "suscipit repellat esse quibusdam voluptatem incidunt",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 22,
+    "title": "distinctio vitae autem nihil ut molestias quo",
+    "completed": true
+  }];
     return {
         onTodoClick: (author) => {
             if (!author.trim()) {
                 return
             }
-            this.props.jsontodos = jsonarr;
             for (let i = 0; i < jsonarr.length; i++) {
                 (author.trim() === jsonarr[i].userId) ? dispatch(addTodo(jsonarr[i].title)) : dispatch(addAuthor(author)) }
         }
     }
 };
-
-function mapStateToPropsTodos(state) {
-  return {
-    jsontodos : state.todos
-  };
-}
-function mapDispatchToPropsTodos(dispatch) {
-  const entityOpFunction = createEntityOperation(dataEntities);
-  return {
-    actions: {
-      entityOperation : (...args) => dispatch(entityOpFunction(...args))
-    }
-  };
-}
-export default connect(mapStateToPropsTodos,mapDispatchToPropsTodos)(mapDispatchToPropsAuth);
 
 const AuthorFilter = connect(
     mapDispatchToPropsAuth

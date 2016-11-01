@@ -1,12 +1,27 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo, dataEntities  } from '../../actions/index'
+import { addTodo} from '../../actions/index'
 import AddTodo from './AddTodo'
-import {createEntityOperation} from 'redux-redents';
-
-this.props.actions.entityOperation('jsontodos','index');
 
 const mapDispatchToPropsList = (dispatch) => {
+    const jsonarr = [{
+    "userId": 1,
+    "id": 20,
+    "title": "ullam nobis libero sapiente ad optio sint",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 21,
+    "title": "suscipit repellat esse quibusdam voluptatem incidunt",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 22,
+    "title": "distinctio vitae autem nihil ut molestias quo",
+    "completed": true
+  }];
     return {
         onTodoClick: (input) => {
             if (!input.trim()) {
@@ -24,23 +39,9 @@ const mapDispatchToPropsList = (dispatch) => {
     }
 };
 
-function mapStateToPropsTodos(state) {
-  return {
-    jsontodos : state.todos
-  };
-}
-function mapDispatchToPropsTodos(dispatch) {
-  const entityOpFunction = createEntityOperation(dataEntities);
-  return {
-    actions: {
-      entityOperation : (...args) => dispatch(entityOpFunction(...args))
-    }
-  };
-}
-export default connect(mapStateToPropsTodos,mapDispatchToPropsTodos)(mapDispatchToPropsList);
-
 const GetList = connect(
     mapDispatchToPropsList
 )(AddTodo)
 
 export default GetList
+

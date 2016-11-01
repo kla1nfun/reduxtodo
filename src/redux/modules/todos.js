@@ -10,6 +10,10 @@ const todo = (state, action) => {
       return {
         author: action.author
       }
+        case 'JSON_TODOS':
+      return {
+        jsonResult: action.jsonResult
+      }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state
@@ -32,6 +36,11 @@ const todos = (state = [], action) => {
         todo(undefined, action)
       ]
     case 'ADD_AUTHOR':
+      return [
+        ...state,
+        todo(undefined, action)
+      ]
+    case 'JSON_TODOS':
       return [
         ...state,
         todo(undefined, action)
