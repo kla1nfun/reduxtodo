@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
   jsonarr: state.jsonResult
 })
 
-const mapDispatchToPropsAuth = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         onTodoClick: (author) => {
             if (!author.trim()) {
@@ -21,7 +21,7 @@ const mapDispatchToPropsAuth = (dispatch) => {
 };
 
 const AuthorFilter = connect(
-    mapDispatchToPropsAuth,
+    mapDispatchToProps,
     mapStateToProps
 )(AddTodo)
 

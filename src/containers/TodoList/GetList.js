@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 })
 
 
-const mapDispatchToPropsList = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     const jsonarr= [];
     return {
         onTodoClick: (input) => {
@@ -28,7 +28,7 @@ const mapDispatchToPropsList = (dispatch) => {
 };
 
 const GetList = connect(
-    mapDispatchToPropsList,
+    mapDispatchToProps,
     mapStateToProps
 )(AddTodo)
 
