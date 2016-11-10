@@ -4,11 +4,8 @@ const todo = (state, action) => {
       return {
         id: action.id,
         text: action.text,
+        author: action.author,
         completed: false
-      }
-    case 'ADD_AUTHOR':
-      return {
-        author: action.author
       }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
@@ -27,11 +24,6 @@ const todo = (state, action) => {
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return [
-        ...state,
-        todo(undefined, action)
-      ]
-    case 'ADD_AUTHOR':
       return [
         ...state,
         todo(undefined, action)
