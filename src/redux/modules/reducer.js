@@ -10,6 +10,7 @@ import info from './info';
 import widgets from './widgets';
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
+import getlist from './getlist'
 
 export default combineReducers({
   routing: routerReducer,
@@ -18,6 +19,7 @@ export default combineReducers({
   form,
   todos,
   visibilityFilter,
+  getlist,
   multireducer: multireducer({
     counter1: counter,
     counter2: counter,

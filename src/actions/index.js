@@ -16,3 +16,10 @@ export const toggleTodo = (id) => ({
   type: 'TOGGLE_TODO',
   id
 })
+
+export const getTodosSuccess = (text, author, id) => ({
+  type: 'GET_USERS_SUCCESS',
+  text,
+  author,
+  id
+})
