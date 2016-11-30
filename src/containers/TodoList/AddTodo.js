@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../../actions/index'
-import * as todoApi from '../../helpers/todos-api';
+import { addTodo } from '../../../api/actions/todo'
 
 let AddTodo = ({ dispatch }) => {
   let input_text;
